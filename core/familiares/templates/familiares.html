@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ titulo }}</h1>
+
+    <!--{% for fruta in frutas %}
+        <p>{{ fruta }}</p>
+    {% endfor %} #}-->
+
+    
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido Paterno</th>
+                <th scope="col">Apellido Materno</th>
+                <th scope="col">Edad</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for familiar in familiares %} 
+              <tr class="table-primary">
+                <th scope="row">{{ familiar.id }}</th>
+                <td>{{ familiar.nombre }}</td>
+                <td>{{ familiar.apellido_paterno }}</td>
+                <td>{{ familiar.apellido_materno }}</td>
+                <td>{{ familiar.edad }}</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    
+    
+{% endblock content %}
